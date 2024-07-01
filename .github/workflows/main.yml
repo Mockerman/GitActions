@@ -1,0 +1,38 @@
+name: GitHub Actions
+on: [push]
+
+jobs:
+  Erkunde-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository-Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Trigger-Ereignis ausgeben
+        run: echo "🎉 Der Job wurde automatisch durch ein ${{ github.event_name }} Ereignis ausgelöst."
+
+      - name: Runner-Betriebssystem ausgeben
+        run: echo "🐧 Dieser Job läuft nun auf einem ${{ runner.os }} Server, der von GitHub gehostet wird!"
+
+      - name: Branch-Name und Repository ausgeben
+        run: echo "🔎 Der Name deines Branches ist ${{ github.ref }} und dein Repository ist ${{ github.repository }}."
+
+      - name: Klonen des Repository bestätigen
+        run: echo "💡 Das ${{ github.repository }} Repository wurde auf den Runner geklont."
+
+      - name: Runner vorbereiten
+        run: echo "🖥️ Der Workflow ist jetzt bereit, deinen Code auf dem Runner zu testen."
+
+      - name: Dateien im Repository auflisten
+        run: ls ${{ github.workspace }}
+
+      - name: Job-Status ausgeben
+        run: echo "🍏 Der Status dieses Jobs ist ${{ job.status }}."
+
+      - name: Abhängigkeiten installieren (optional)
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          elif [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
