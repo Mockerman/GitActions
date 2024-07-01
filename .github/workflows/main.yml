@@ -1,8 +1,10 @@
 name: GitHub Actions
-on: [push]
+on: 
+  push:
+  pull_request:
 
 jobs:
-  Erkunde-GitHub-Actions:
+  changed-job:
     runs-on: ubuntu-latest
     steps:
       - name: Repository-Code auschecken
@@ -36,3 +38,6 @@ jobs:
           elif [ -f requirements.txt ]; then
             pip install -r requirements.txt
           fi
+
+      - name: AufWiederSehen
+        run: echo "Bye bye!"
