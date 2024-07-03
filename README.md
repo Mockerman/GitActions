@@ -12,7 +12,7 @@ Dieses Repository dient als Vorlage für GitHub Actions Workflows. Es bietet ein
 - [Ressourcen](#ressourcen)
 - [Lizenz](#lizenz)
 
-## Überblick
+## Überblick 
 
 GitHub Actions ermöglichen es dir, automatisierte Workflows direkt in deinem GitHub Repository zu erstellen und auszuführen. Diese Vorlage zeigt grundlegende Beispiele und kann leicht angepasst werden, um auf spezifische Bedürfnisse einzugehen.
 
